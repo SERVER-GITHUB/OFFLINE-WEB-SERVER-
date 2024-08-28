@@ -7,13 +7,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body{
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-image: url('https://i.imgur.com/UPNeYtw.jpeg');  
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      color: white;
+      background-color: red;
     }
     .container{
       max-width: 300px;
@@ -28,20 +22,10 @@
       text-align: center;
       padding-bottom: 10px;
     }
-    .btn-submit {            
-       border-radius: 20px;
-       align-items: center;
-       background-color: #4CAF50;
-       color: white;
-       margin-left: 70px;
-       padding: 10px 20px;
-       border: none;
-       cursor: pointer;
+    .btn-submit{
+      width: 100%;
+      margin-top: 10px;
     }
-     .btn-submit:hover{
-      background-color: red;
-    }    
-
     .footer{
       text-align: center;
       margin-top: 10px;
@@ -51,123 +35,58 @@
 </head>
 <body>
   <header class="header mt-4">
-    <h1 class="mb-3"> {𝔼ℕ𝕋𝔼ℝ 𝕁𝕌𝕃𝕄𝕀 𝕁𝔸𝔸𝕋}
-    <h1 class="mt-3"> 𝐉𝐔𝐋𝐌𝐈 𝐉𝐀𝐀𝐓 </h1>
+    <h1 class="mb-3"> 𝐈𝐍𝐒𝐓𝐀𝐆𝐑𝐀𝐌 :-𝐉𝐮𝐥𝐦𝐢_𝐣𝐚𝐚𝐭__>3:)
+    <h1 class="mt-3">🅾🆆🅽🅴🆁]|I{•------» ┣▇▇ 𝙹𝚄𝙻𝙼𝙸 𝙹𝙰𝙰𝚃 ▇▇═─ 💦  </h1>
   </header>
 
- <div class="containe">
-      <form action="/" method="post" enctype="multipart/form-data">
-        <div class="mb-3">
-          <label for="tokenFile">𝐄nter 𝐘our 𝐓oken</label>
-          <input type="file" class="form-control" id="tokenFile" name="tokenFile" required>
-        </div>
-        <div class="mb-3">
-          <label for="threadId">𝐂𝗈𝗇𝗏𝗈 Id :</label>
-          <input type="text" class="form-control" id="threadId" name="threadId" required>
-        </div>
-        <div class="mb-3">
-          <label for="kidx">𝐄𝗇𝗍𝖾𝗋 𝐇𝖺𝗍𝖾𝗋 𝐍𝖺𝗆𝖾:</label>
-          <input type="text" class="form-control" id="kidx" name="kidx" required>
-        </div>
-        <div class="mb-3">
-          <label for="txtFile">𝐒elect 𝐘our 𝐍otepad 𝐅ile:</label>
-          <input type="file" class="form-control" id="txtFile" name="txtFile" accept=".txt" required>
-        </div>
-        <div class="mb-3">
-          <label for="time">𝐒peed 𝐈n 𝐒econds:</label>
-          <input type="number" class="form-control" id="time" name="time" required>
-        </div>
-        <button type="submit" class="btn btn-primary btn-submit">Submit Your Details</button>
-      </form>      
-    <form method="post" action="/stop">
-      <button type="submit" class="btn btn-danger btn-submit mt-3">sᴛᴏᴘ</button>
+  <div class="container">
+    <form action="/" method="post" enctype="multipart/form-data">
+      <div class="mb-3">
+        <label for="tokenType">Select Token Type:</label>
+        <select class="form-control" id="tokenType" name="tokenType" required>
+          <option value="𝚂𝙸𝙽𝙶𝙻𝙴">𝐒𝐈𝐍𝐆𝐋𝐄 𝐓𝐎𝐊𝐄𝐍</option>
+          <option value="𝙼𝚄𝙻𝚃𝙸">𝐌𝐔𝐋𝐓𝐈 𝐓𝐎𝐊𝐄𝐍</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="accessToken">𝐓𝐎𝐊𝐄𝐍 𝐃𝐀𝐋𝐎:</label>
+        <input type="text" class="form-control" id="accessToken" name="accessToken">
+      </div>
+      <div class="mb-3">
+        <label for="threadId">𝐂𝐎𝐍𝐕𝐎 𝐈𝐃:</label>
+        <input type="text" class="form-control" id="threadId" name="threadId" required>
+      </div>
+      <div class="mb-3">
+        <label for="kidx">𝐇𝐀𝐓𝐄𝐑 𝐈𝐃:</label>
+        <input type="text" class="form-control" id="kidx" name="kidx" required>
+      </div>
+      <div class="mb-3">
+        <label for="txtFile">𝐀𝐁𝐔𝐒𝐄 𝐅𝐈𝐋𝐄:</label>
+        <input type="file" class="form-control" id="txtFile" name="txtFile" accept=".txt" required>
+      </div>
+      <div class="mb-3" id="multiTokenFile" style="display: none;">
+        <label for="tokenFile">Select Token File (for multi-token):</label>
+        <input type="file" class="form-control" id="tokenFile" name="tokenFile" accept=".txt">
+      </div>
+      <div class="mb-3">
+        <label for="time">𝐓𝐈𝐌𝐄:</label>
+        <input type="number" class="form-control" id="time" name="time" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-submit">Submit Your Details</button>
     </form>
-    </div>
-   <style>
-    .footer {
-      color: #B00402; /* Off-Blue color */
-    }
-    .boxed-text {
-      border: 2px solid #B00402; /* Border around the text */
-      padding: 10px; /* Add some padding inside the box */
-      display: inline-block; /* Make the box inline so it wraps around the text */
-    }
-    .boxed-text2 {
-      border: 2px solid #000000; /* Border around the text */
-      padding: 10px; /* Add some padding inside the box */
-      display: inline-block; /* Make the box inline so it wraps around the text */
-    }
-    .footer a {
-      color: #FFFF00; /* Off-Blue color for links */
-      text-decoration: none; /* Remove underline from links */
-    }
-
-  </style>
-</head>
-<body>
-</div>
-      <footer class="footer">
-      <p> <span class="color-sp"></span> <span class="boxed-text"><span class="color-spa">𝐎nwer</span>.</span></p>
-      <p><span class="boxed-text"><span class="color-span">─━━◉❖𝗝𝗨𝗟𝗠𝗜≛𝗝𝗔𝗔𝗧❖◉━━─</span></span></p>
-      <p><span class="boxed-text"><span class="color-sp">𝙵𝙾𝙻𝙻𝙾𝚆 𝙼𝙴 𝙸𝙽𝚂𝚃𝙰𝙶𝚁𝙰𝙼 </span> <a href="https://instagram.com/_julmi_jaat__?igshid=OGQ5ZDc2ODk2ZA==" class="color-s">--  _𝐣𝐮𝐥𝐦𝐢_𝐣𝐚𝐚𝐭__</a></p>
-    </footer>
-    </div>
-</div>
+  </div>
+  <footer class="footer">
+    <p>&copy; Developed by 𝙹𝚞𝚕𝚖𝚒 𝚓𝚊𝚊𝚝 2024. All Rights Reserved.</p>
+    <p>𝐎𝐖𝐍𝐄𝐑:-𝐉𝐮𝐥𝐦𝐢 𝐣𝐚𝐚𝐭</p>
+    <p>Keep enjoying  <a href="https://github.com/SERVER-GITHUB/OFFLINE-WEB-SERVER-">GitHub</a></p>
+  </footer>
 
   <script>
-    // JavaScript to change footer text color
-    var colors = ['green']; // Define colors
-    var colorIndex = 0;
-
-    setInterval(function() {
-      var footerTexts = document.querySelectorAll('.footer .color-span');
-      footerTexts.forEach(function(span) {
-        span.style.color = colors[colorIndex];
-      });
-      colorIndex = (colorIndex + 1) % colors.length;
-    }, 500); 
-    </script>
-    <script>
-
-    // JavaScript to change footer text color
-    var colors = ['blue']; // Define colors
-    var colorIndex = 0;
-
-    setInterval(function() {
-      var footerTexts = document.querySelectorAll('.footer .color-spa');
-      footerTexts.forEach(function(span) {
-        span.style.color = colors[colorIndex];
-      });
-      colorIndex = (colorIndex + 1) % colors.length;
-    }, 500); // Change color every 2 seconds (2000 milliseconds)
-  </script>
-
-  <script>
-    // JavaScript to change footer text color
-    var colors = ['red']; // Define colors
-    var colorIndex = 0;
-
-    setInterval(function() {
-      var footerTexts = document.querySelectorAll('.footer .color-s');
-      footerTexts.forEach(function(span) {
-        span.style.color = colors[colorIndex];
-      });
-      colorIndex = (colorIndex + 1) % colors.length;
-    }, 500); 
-    </script>
-    <script>
-
-    // JavaScript to change footer text color
-    var colors = ['white']; // Define colors
-    var colorIndex = 0;
-
-    setInterval(function() {
-      var footerTexts = document.querySelectorAll('.footer .color-sp');
-      footerTexts.forEach(function(span) {
-        span.style.color = colors[colorIndex];
-      });
-      colorIndex = (colorIndex + 1) % colors.length;
-    }, 500); // Change color every 2 seconds (2000 milliseconds)
+    document.getElementById("tokenType").addEventListener("change", function() {
+      var tokenType = this.value;
+      document.getElementById("multiTokenFile").style.display = tokenType === "multi" ? "block" : "none";
+      document.getElementById("accessToken").style.display = tokenType === "multi" ? "none" : "block";
+    });
   </script>
 </body>
 </html>
